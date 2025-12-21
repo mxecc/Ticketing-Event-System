@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Dashboard - Ticketing Event System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>🎫 Organizer Dashboard</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Manage Your Events</h2>
+                <button class="btn btn-primary" onclick="openEventModal()">+ Create New Event</button>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-info">
+                        <h3 id="totalEvents">0</h3>
+                        <p>Total Events</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎫</div>
+                    <div class="stat-info">
+                        <h3 id="totalTickets">0</h3>
+                        <p>Total Tickets Sold</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-info">
+                        <h3 id="totalRevenue">$0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h3 id="totalAttendees">0</h3>
+                        <p>Total Attendees</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events Table -->
+            <div class="dashboard-content">
+                <div class="events-table-container">
+                    <table class="events-table">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Tickets Sold</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventsTableBody">
+                            <!-- Events will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create/Edit Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-modal" onclick="closeEventModal()">&times;</span>
+            <h2 id="modalTitle">Create New Event</h2>
+            <form id="eventForm" onsubmit="saveEvent(event)">
+                <div class="form-group">
+                    <label for="eventName">Event Name *</label>
+                    <input type="text" id="eventName" name="eventName" required 
+                           placeholder="Enter event name"
+                           oninput="validateEventField(this)">
+                    <span class="error-message" id="eventNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="eventCategory">Category *</label>
+                    <select id="eventCategory" name="eventCategory" required>
+                        <option value="">Select category</option>
+                        <option value="cultural">Cultural</option>
+                        <option value="food">Food</option>
+                        <option value="nature">Nature</option>
+                        <option value="adventure">Adventure</option>
+                    </select>
+                    <span class="error-message" id="eventCategoryError"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Date *</label>
+                        <input type="date" id="eventDate" name="eventDate" required
+                               onchange="validateEventField(this)">
+                        <span class="error-message" id="eventDateError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Time *</label>
+                        <input type="time" id="eventTime" name="eventTime" required
+                               onchange="validateEventField(this)">
+                        <span class="error-message" id="eventTimeError"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="eventLocation">Location *</label>
+                    <input type="text" id="eventLocation" name="eventLocation" required 
+                           placeholder="Enter event location"
+                           oninput="validateEventField(this)">
+                    <span class="error-message" id="eventLocationError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="eventPrice">Ticket Price ($) *</label>
+                    <input type="number" id="eventPrice" name="eventPrice" required 
+                           placeholder="0.00" min="0" step="0.01"
+                           oninput="validateEventField(this)">
+                    <span class="error-message" id="eventPriceError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="eventCapacity">Capacity *</label>
+                    <input type="number" id="eventCapacity" name="eventCapacity" required 
+                           placeholder="Maximum attendees" min="1"
+                           oninput="validateEventField(this)">
+                    <span class="error-message" id="eventCapacityError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description *</label>
+                    <textarea id="eventDescription" name="eventDescription" required 
+                              rows="4" placeholder="Enter event description"
+                              oninput="validateEventField(this)"></textarea>
+                    <span class="error-message" id="eventDescriptionError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="eventImage">Image URL</label>
+                    <input type="url" id="eventImage" name="eventImage" 
+                           placeholder="https://example.com/image.jpg">
+                </div>
+                <input type="hidden" id="eventId" name="eventId">
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeEventModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ticketing Event System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/validation.js"></script>
+</body>
+</html>
+

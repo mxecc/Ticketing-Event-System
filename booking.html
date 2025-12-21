@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - Ticketing Event System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="booking-page">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>🎫 Ticketing Event System</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Booking Container -->
+    <div class="booking-container">
+        <div class="container">
+            <div class="booking-content">
+                <!-- Event Summary -->
+                <div class="booking-section" id="eventSummarySection">
+                    <h2>Event Summary</h2>
+                    <div id="eventSummary" class="event-summary">
+                        <!-- Event details will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-section">
+                    <h2>Booking Information</h2>
+                    <form id="bookingForm" onsubmit="processBooking(event)">
+                        <div class="form-group">
+                            <label for="bookingFullname">Full Name *</label>
+                            <input type="text" id="bookingFullname" name="fullname" required 
+                                   placeholder="Enter your full name"
+                                   oninput="validateName(this)">
+                            <span class="error-message" id="bookingFullnameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingEmail">Email Address *</label>
+                            <input type="email" id="bookingEmail" name="email" required 
+                                   placeholder="Enter your email"
+                                   oninput="validateEmail(this)">
+                            <span class="error-message" id="bookingEmailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingPhone">Phone Number *</label>
+                            <input type="tel" id="bookingPhone" name="phone" required 
+                                   placeholder="Enter your phone number"
+                                   oninput="validatePhone(this)">
+                            <span class="error-message" id="bookingPhoneError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingQuantity">Number of Tickets *</label>
+                            <input type="number" id="bookingQuantity" name="quantity" required 
+                                   placeholder="1" min="1" max="10"
+                                   onchange="calculateTotal()"
+                                   oninput="validateQuantity(this)">
+                            <span class="error-message" id="bookingQuantityError"></span>
+                        </div>
+
+                        <!-- Payment Section -->
+                        <div class="payment-section">
+                            <h3>Payment Information</h3>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" required 
+                                       placeholder="1234 5678 9012 3456" maxlength="19"
+                                       oninput="formatCardNumber(this); validateCardNumber(this)">
+                                <span class="error-message" id="cardNumberError"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cardExpiry">Expiry Date *</label>
+                                    <input type="text" id="cardExpiry" name="cardExpiry" required 
+                                           placeholder="MM/YY" maxlength="5"
+                                           oninput="formatExpiry(this); validateExpiry(this)">
+                                    <span class="error-message" id="cardExpiryError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardCVV">CVV *</label>
+                                    <input type="text" id="cardCVV" name="cardCVV" required 
+                                           placeholder="123" maxlength="4"
+                                           oninput="validateCVV(this)">
+                                    <span class="error-message" id="cardCVVError"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardName">Cardholder Name *</label>
+                                <input type="text" id="cardName" name="cardName" required 
+                                       placeholder="Name on card"
+                                       oninput="validateName(this)">
+                                <span class="error-message" id="cardNameError"></span>
+                            </div>
+                        </div>
+
+                        <!-- Total Price -->
+                        <div class="price-summary">
+                            <div class="price-row">
+                                <span>Ticket Price:</span>
+                                <span id="ticketPrice">$0.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Quantity:</span>
+                                <span id="ticketQuantity">1</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total Amount:</span>
+                                <span id="totalAmount">$0.00</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="bookBtn">
+                            Complete Booking
+                        </button>
+                        <div class="form-message" id="bookingMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content modal-small">
+            <div class="success-content">
+                <div class="success-icon">✅</div>
+                <h2>Booking Successful!</h2>
+                <p id="successMessage">Your tickets have been booked successfully.</p>
+                <div class="ticket-details" id="ticketDetails"></div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="closeSuccessModal()">Done</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='index.html'">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ticketing Event System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/validation.js"></script>
+</body>
+</html>
+

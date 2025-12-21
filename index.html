@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing Event System - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>🎫 Ticketing Event System</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><a href="#map" class="nav-link">Map</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Discover Amazing Events</h2>
+            <p class="hero-subtitle">Book tickets for the best cultural, food, nature, and adventure events in your area</p>
+            <a href="#events" class="btn btn-primary">Explore Events</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="eventSearch" class="search-input" placeholder="Search events (e.g., Riyadh Season)">
+                <button class="btn btn-search" onclick="searchEvents()">Search</button>
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all" onclick="filterEvents('all')">All Events</button>
+                <button class="filter-btn" data-category="cultural" onclick="filterEvents('cultural')">Cultural</button>
+                <button class="filter-btn" data-category="food" onclick="filterEvents('food')">Food</button>
+                <button class="filter-btn" data-category="nature" onclick="filterEvents('nature')">Nature</button>
+                <button class="filter-btn" data-category="adventure" onclick="filterEvents('adventure')">Adventure</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-grid" id="eventsGrid">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+            <div id="noEventsMessage" class="no-events" style="display: none;">
+                <p>No events found. Try a different search or filter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Event Locations</h2>
+            <div class="map-container">
+                <div class="map-simulation">
+                    <div class="map-placeholder">
+                        <div class="map-marker" style="top: 30%; left: 25%;" data-event="Riyadh Season">
+                            <span class="marker-icon">📍</span>
+                            <div class="marker-tooltip">Riyadh Season</div>
+                        </div>
+                        <div class="map-marker" style="top: 50%; left: 60%;" data-event="Food Festival">
+                            <span class="marker-icon">📍</span>
+                            <div class="marker-tooltip">Food Festival</div>
+                        </div>
+                        <div class="map-marker" style="top: 70%; left: 40%;" data-event="Nature Walk">
+                            <span class="marker-icon">📍</span>
+                            <div class="marker-tooltip">Nature Walk</div>
+                        </div>
+                        <div class="map-marker" style="top: 20%; left: 75%;" data-event="Adventure Race">
+                            <span class="marker-icon">📍</span>
+                            <div class="marker-tooltip">Adventure Race</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-legend">
+                    <h3>Event Locations</h3>
+                    <p>Click on markers to view event details</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Us</h2>
+                <p class="about-text">
+                    We are a specialized platform for booking tickets to cultural, entertainment, and recreational events. 
+                    We provide you with an easy and comfortable experience to book tickets for the best events in the area.
+                </p>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Booking</h3>
+                        <p>Book your ticket in minutes</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Safe</h3>
+                        <p>Fully protected and secure transactions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Easy to Use</h3>
+                        <p>Simple and user-friendly interface for everyone</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3>Quality Assured</h3>
+                        <p>Grade A Security & Reliability (SonarCloud)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ticketing Event System. All rights reserved.</p>
+            <p class="footer-subtitle">Software Engineering 2 - Final Project</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Event Details -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                <!-- Event details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/events.js"></script>
+</body>
+</html>
