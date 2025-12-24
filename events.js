@@ -17,9 +17,9 @@ let eventsData = [
         capacity: 10000,
         sold: 7500,
         description: "A premier entertainment zone showcasing global cultures, the world's largest man-made lake, and diverse international pavilions.",
-        image: "images/boulevard.jpg",
+        image: "images/boulevard.jpg.jpg",
         mapLocation: { lat: 24.776, lng: 46.628, city: "Riyadh" },
-        googleMapsUrl: "https://maps.app.goo.gl/YfB91"
+        googleMapsUrl: "https://maps.app.goo.gl/9T8fD3gGndPq6A6P7"
     },
     {
         id: 2,
@@ -34,9 +34,9 @@ let eventsData = [
         capacity: 5000,
         sold: 4200,
         description: "Experience the adrenaline at the world's fastest and longest street circuit, located on the beautiful Jeddah Corniche.",
-        image: "images/f1.jpg",
+        image: "images/f1.jpg.jpg",
         mapLocation: { lat: 21.5433, lng: 39.1728, city: "Jeddah" },
-        googleMapsUrl: "https://maps.app.goo.gl/JeddahF1"
+        googleMapsUrl: "https://maps.app.goo.gl/o1H7K8v2z2H3Xn8R6"
     },
     {
         id: 3,
@@ -51,9 +51,9 @@ let eventsData = [
         capacity: 2000,
         sold: 1800,
         description: "Discover Maraya, the world's largest mirrored building, nestled in the stunning desert canyon of Ashar Valley.",
-        image: "images/alula.jpg",
+        image: "images/alula.jpg.jpg",
         mapLocation: { lat: 26.6144, lng: 37.9236, city: "AlUla" },
-        googleMapsUrl: "https://maps.app.goo.gl/AlUla"
+        googleMapsUrl: "https://maps.app.goo.gl/v6Y7M5J2H9L6K4P7"
     },
     {
         id: 4,
@@ -68,9 +68,9 @@ let eventsData = [
         capacity: 20000,
         sold: 15000,
         description: "The future capital of thrills, featuring 'Falcon's Flight', the world's tallest, fastest, and longest rollercoaster.",
-        image: "images/qiddiya.jpg",
+        image: "images/qiddiya.jpg.jpg",
         mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" },
-        googleMapsUrl: "https://maps.app.goo.gl/9Z3R7"
+        googleMapsUrl: "https://maps.app.goo.gl/uX6ZEnXp4EsqiHoz8"
     },
     {
         id: 5,

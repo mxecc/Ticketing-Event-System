@@ -491,7 +491,7 @@ body {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: center;
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     background: linear-gradient(135deg, var(--vibrant-purple), var(--emerald-green));
     position: relative;
@@ -503,13 +503,7 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    display: block;
-}
-
-.event-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    border-radius: 12px 12px 0 0;
     display: block;
 }
 
