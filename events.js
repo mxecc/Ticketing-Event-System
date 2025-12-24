@@ -34,7 +34,7 @@ let eventsData = [
         capacity: 5000,
         sold: 4200,
         description: "Experience the adrenaline at the world's fastest and longest street circuit, located on the beautiful Jeddah Corniche.",
-        image: "images/f1.jpg.jpg",
+        image: "images/f1.jpg.png",
         mapLocation: { lat: 21.5433, lng: 39.1728, city: "Jeddah" },
         googleMapsUrl: "https://maps.app.goo.gl/o1H7K8v2z2H3Xn8R6"
     },
@@ -51,7 +51,7 @@ let eventsData = [
         capacity: 2000,
         sold: 1800,
         description: "Discover Maraya, the world's largest mirrored building, nestled in the stunning desert canyon of Ashar Valley.",
-        image: "images/alula.jpg.jpg",
+        image: "images/alula.jpg.png",
         mapLocation: { lat: 26.6144, lng: 37.9236, city: "AlUla" },
         googleMapsUrl: "https://maps.app.goo.gl/v6Y7M5J2H9L6K4P7"
     },
@@ -68,7 +68,7 @@ let eventsData = [
         capacity: 20000,
         sold: 15000,
         description: "The future capital of thrills, featuring 'Falcon's Flight', the world's tallest, fastest, and longest rollercoaster.",
-        image: "images/qiddiya.jpg.jpg",
+        image: "images/qiddiya.jpg.png",
         mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" },
         googleMapsUrl: "https://maps.app.goo.gl/uX6ZEnXp4EsqiHoz8"
     },
@@ -138,7 +138,7 @@ function displayEvents(events) {
     
     eventsGrid.innerHTML = events.map(event => `
         <div class="event-card" onclick="viewEventDetails(${event.id})">
-            <img src="${event.image}" alt="${event.name}" class="event-image" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #7c3aed, #10b981)'; this.parentElement.style.minHeight='200px';">
+            <img src="${event.image}" alt="${event.name}" class="event-image" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Check+Extension';">
             <div class="event-content">
                 <span class="event-category ${event.category}">${event.category.charAt(0).toUpperCase() + event.category.slice(1)}</span>
                 <h3 class="event-title">${event.name}</h3>
@@ -228,7 +228,7 @@ function viewEventDetails(eventId) {
     
     modalBody.innerHTML = `
         <div class="event-details-modal">
-            <img src="${event.image}" alt="${event.name}" style="width: 100%; height: 300px; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 1.5rem;" onerror="this.style.background='linear-gradient(135deg, #7c3aed, #10b981)'">
+            <img src="${event.image}" alt="${event.name}" style="width: 100%; height: 300px; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 1.5rem;" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Check+Extension';">
             <span class="event-category ${event.category}">${event.category.charAt(0).toUpperCase() + event.category.slice(1)}</span>
             <h2 style="margin: 1rem 0; color: var(--text-primary);">${event.name}</h2>
             ${event.nameAr ? `<p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-family: 'Cairo', sans-serif; direction: rtl;">${event.nameAr}</p>` : ''}
