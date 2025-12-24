@@ -6,73 +6,88 @@
 let eventsData = [
     {
         id: 1,
-        name: "Riyadh Season 2025 - Boulevard World",
+        name: "Boulevard World",
+        nameAr: "بوليفارد وورلد",
         category: "cultural",
         date: "2025-12-15",
         time: "18:00",
-        location: "Boulevard World, Riyadh, Saudi Arabia",
+        location: "Hittin, Riyadh, Saudi Arabia",
+        locationAr: "حطين، الرياض، المملكة العربية السعودية",
         price: 150.00,
         capacity: 10000,
         sold: 7500,
-        description: "Experience the world's most exciting entertainment destination at Boulevard World. Featuring international shows, cultural experiences, and world-class performances. This year's season promises unforgettable moments with attractions from around the globe.",
-        image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
-        mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" }
+        description: "A premier entertainment zone showcasing global cultures, the world's largest man-made lake, and diverse international pavilions.",
+        image: "images/boulevard.jpg.jpg",
+        mapLocation: { lat: 24.776, lng: 46.628, city: "Riyadh" },
+        googleMapsUrl: "https://maps.app.goo.gl/YfB91"
     },
     {
         id: 2,
-        name: "Formula 1 Saudi Arabian Grand Prix",
+        name: "Jeddah F1 Grand Prix",
+        nameAr: "جائزة جدة الكبرى للفورمولا 1",
         category: "adventure",
         date: "2025-12-07",
         time: "20:00",
         location: "Jeddah Corniche Circuit, Jeddah, Saudi Arabia",
+        locationAr: "حلبة كورنيش جدة، جدة، المملكة العربية السعودية",
         price: 450.00,
         capacity: 5000,
         sold: 4200,
-        description: "Witness the fastest cars in the world race through the stunning Jeddah Corniche Circuit. Experience the thrill of Formula 1 racing under the lights with world-class drivers competing for the championship. Includes access to paddock area and entertainment zones.",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-        mapLocation: { lat: 21.5433, lng: 39.1728, city: "Jeddah" }
+        description: "Experience the adrenaline at the world's fastest and longest street circuit, located on the beautiful Jeddah Corniche.",
+        image: "images/f1.jpg.png",
+        mapLocation: { lat: 21.5433, lng: 39.1728, city: "Jeddah" },
+        googleMapsUrl: "https://maps.app.goo.gl/JeddahF1"
     },
     {
         id: 3,
-        name: "AlUla Moments - Winter at Tantora",
+        name: "AlUla Moments - Maraya",
+        nameAr: "لحظات العلا - مرايا",
         category: "cultural",
         date: "2025-12-20",
         time: "19:00",
-        location: "AlUla, Saudi Arabia",
+        location: "AlUla, Medina Province, Saudi Arabia",
+        locationAr: "العلا، منطقة المدينة المنورة، المملكة العربية السعودية",
         price: 200.00,
         capacity: 2000,
         sold: 1800,
-        description: "Immerse yourself in the magical Winter at Tantora festival in the ancient city of AlUla. Enjoy classical music concerts, art installations, and cultural experiences in one of the world's most stunning heritage sites. A celebration of music, art, and history.",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-        mapLocation: { lat: 26.6144, lng: 37.9236, city: "AlUla" }
+        description: "Discover Maraya, the world's largest mirrored building, nestled in the stunning desert canyon of Ashar Valley.",
+        image: "images/alula.jpg.png",
+        mapLocation: { lat: 26.6144, lng: 37.9236, city: "AlUla" },
+        googleMapsUrl: "https://maps.app.goo.gl/AlUla"
     },
     {
         id: 4,
         name: "Six Flags Qiddiya",
+        nameAr: "سيكس فلاج القدية",
         category: "adventure",
         date: "2025-12-19",
         time: "10:00",
         location: "Qiddiya, Riyadh, Saudi Arabia",
+        locationAr: "القدية، الرياض، المملكة العربية السعودية",
         price: 350.00,
         capacity: 20000,
         sold: 15000,
-        description: "Experience the world's most thrilling theme park! Home to Falcon's Flight - the world's tallest and fastest rollercoaster. Six Flags Qiddiya features record-breaking rides, immersive themed areas, and world-class entertainment. A must-visit destination for thrill-seekers and families alike.",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-        mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" }
+        description: "The future capital of thrills, featuring 'Falcon's Flight', the world's tallest, fastest, and longest rollercoaster.",
+        image: "images/qiddiya.jpg.png",
+        mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" },
+        googleMapsUrl: "https://maps.app.goo.gl/9Z3R7"
     },
     {
         id: 5,
         name: "Saudi Cup 2025",
+        nameAr: "كأس السعودية 2025",
         category: "adventure",
         date: "2025-12-25",
         time: "15:00",
         location: "King Abdulaziz Racetrack, Riyadh, Saudi Arabia",
+        locationAr: "مضمار الملك عبدالعزيز، الرياض، المملكة العربية السعودية",
         price: 180.00,
         capacity: 8000,
         sold: 6500,
         description: "The world's richest horse race! Watch elite thoroughbreds compete for the $20 million prize. Experience the excitement of world-class horse racing with VIP access, fine dining, and entertainment. A prestigious event in the heart of Riyadh.",
-        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
-        mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" }
+        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80",
+        mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" },
+        googleMapsUrl: "https://www.google.com/maps?q=24.7136,46.6753"
     }
 ];
 
@@ -123,7 +138,7 @@ function displayEvents(events) {
     
     eventsGrid.innerHTML = events.map(event => `
         <div class="event-card" onclick="viewEventDetails(${event.id})">
-            <img src="${event.image}" alt="${event.name}" class="event-image" onerror="this.style.background='linear-gradient(135deg, #6366f1, #818cf8)'">
+            <img src="${event.image}" alt="${event.name}" class="event-image" loading="lazy" onerror="this.onerror=null; this.style.background='linear-gradient(135deg, #7c3aed, #10b981)'; this.style.display='block';">
             <div class="event-content">
                 <span class="event-category ${event.category}">${event.category.charAt(0).toUpperCase() + event.category.slice(1)}</span>
                 <h3 class="event-title">${event.name}</h3>
@@ -137,8 +152,8 @@ function displayEvents(events) {
                 </div>
                 ${event.mapLocation ? `
                 <div class="event-location-link">
-                    <a href="#map" onclick="event.stopPropagation(); showEventOnMap(${event.id})" class="location-link">
-                        📍 View on Map
+                    <a href="${event.googleMapsUrl || '#'}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="location-link">
+                        📍 View Location on Google Maps
                     </a>
                 </div>
                 ` : ''}
@@ -213,10 +228,11 @@ function viewEventDetails(eventId) {
     
     modalBody.innerHTML = `
         <div class="event-details-modal">
-            <img src="${event.image}" alt="${event.name}" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;" onerror="this.style.background='linear-gradient(135deg, #6366f1, #818cf8)'">
+            <img src="${event.image}" alt="${event.name}" style="width: 100%; height: 300px; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 1.5rem;" onerror="this.style.background='linear-gradient(135deg, #7c3aed, #10b981)'">
             <span class="event-category ${event.category}">${event.category.charAt(0).toUpperCase() + event.category.slice(1)}</span>
-            <h2 style="margin: 1rem 0; color: var(--dark-color);">${event.name}</h2>
-            <p style="color: var(--gray-color); margin-bottom: 1rem;">${event.description}</p>
+            <h2 style="margin: 1rem 0; color: var(--text-primary);">${event.name}</h2>
+            ${event.nameAr ? `<p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-family: 'Cairo', sans-serif; direction: rtl;">${event.nameAr}</p>` : ''}
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">${event.description}</p>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0;">
                 <div>
                     <strong>📅 Date:</strong>
@@ -229,16 +245,22 @@ function viewEventDetails(eventId) {
                 <div>
                     <strong>📍 Location:</strong>
                     <p>${event.location}</p>
+                    ${event.locationAr ? `<p style="font-family: 'Cairo', sans-serif; direction: rtl; font-size: 0.875rem; color: var(--text-secondary);">${event.locationAr}</p>` : ''}
                 </div>
                 <div>
                     <strong>💰 Price:</strong>
-                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.25rem;">${formatCurrency(event.price)}</p>
+                    <p style="background: linear-gradient(135deg, var(--vibrant-purple), var(--emerald-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700; font-size: 1.25rem;">${formatCurrency(event.price)}</p>
                 </div>
             </div>
-            <div style="background: var(--light-color); padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+            <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
                 <p><strong>Tickets Available:</strong> ${available} / ${event.capacity}</p>
             </div>
-            <a href="booking.html?eventId=${event.id}" class="btn btn-primary btn-block" style="margin-top: 1.5rem; text-align: center;">Book Tickets</a>
+            ${event.googleMapsUrl ? `
+            <a href="${event.googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block" style="margin-top: 1rem; text-align: center;">
+                📍 View on Google Maps
+            </a>
+            ` : ''}
+            <a href="booking.html?eventId=${event.id}" class="btn btn-primary btn-block" style="margin-top: 1rem; text-align: center;">Book Tickets</a>
         </div>
     `;
     
@@ -295,6 +317,75 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
+// Show event on map
+function showEventOnMap(eventId) {
+    const event = eventsData.find(e => e.id === eventId);
+    if (!event || !event.mapLocation) return;
+    
+    const { lat, lng } = event.mapLocation;
+    const mapIframe = document.getElementById('eventMap');
+    
+    if (mapIframe) {
+        // Update Google Maps embed with event location
+        const encodedLocation = encodeURIComponent(event.location);
+        const newMapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ5LjAiTiA0NsKwNDAnMzEuMSJF!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sen!2sus&q=${encodedLocation}`;
+        mapIframe.src = newMapUrl;
+        
+        // Scroll to map section
+        document.getElementById('map')?.scrollIntoView({ behavior: 'smooth' });
+        
+        // Highlight event in legend
+        highlightEventInLegend(eventId);
+    }
+}
+
+// Center map on Riyadh
+function centerMapOnRiyadh() {
+    const mapIframe = document.getElementById('eventMap');
+    if (mapIframe) {
+        mapIframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba76d1c73e1d982c!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus&q=24.7136,46.6753';
+        document.getElementById('map')?.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Show all events on map
+function showAllEvents() {
+    const mapIframe = document.getElementById('eventMap');
+    if (mapIframe) {
+        mapIframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba76d1c73e1d982c!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus&z=7';
+        document.getElementById('map')?.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Highlight event in legend
+function highlightEventInLegend(eventId) {
+    const legendItems = document.querySelectorAll('.event-location-item');
+    legendItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.dataset.eventId == eventId) {
+            item.classList.add('active');
+        }
+    });
+}
+
+// Populate event locations list
+function populateEventLocations() {
+    const locationsList = document.getElementById('eventLocationsList');
+    if (!locationsList) return;
+    
+    locationsList.innerHTML = eventsData.map(event => `
+        <div class="event-location-item" data-event-id="${event.id}" onclick="showEventOnMap(${event.id})">
+            <strong>${event.name}</strong>
+            <span>📍 ${event.location}</span>
+        </div>
+    `).join('');
+}
+
+// Initialize map on page load
+document.addEventListener('DOMContentLoaded', function() {
+    populateEventLocations();
+});
+
 // Export functions for use in other files
 window.eventsData = eventsData;
 window.displayEvents = displayEvents;
@@ -302,4 +393,7 @@ window.filterEvents = filterEvents;
 window.searchEvents = searchEvents;
 window.viewEventDetails = viewEventDetails;
 window.loadEventForBooking = loadEventForBooking;
+window.showEventOnMap = showEventOnMap;
+window.centerMapOnRiyadh = centerMapOnRiyadh;
+window.showAllEvents = showAllEvents;
 
