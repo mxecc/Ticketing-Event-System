@@ -17,7 +17,7 @@ let eventsData = [
         capacity: 10000,
         sold: 7500,
         description: "A premier entertainment zone showcasing global cultures, the world's largest man-made lake, and diverse international pavilions.",
-        image: "images/boulevard.jpg.jpg",
+        image: "images/boulevard.jpg",
         mapLocation: { lat: 24.776, lng: 46.628, city: "Riyadh" },
         googleMapsUrl: "https://maps.app.goo.gl/YfB91"
     },
@@ -34,7 +34,7 @@ let eventsData = [
         capacity: 5000,
         sold: 4200,
         description: "Experience the adrenaline at the world's fastest and longest street circuit, located on the beautiful Jeddah Corniche.",
-        image: "images/f1.jpg.png",
+        image: "images/f1.jpg",
         mapLocation: { lat: 21.5433, lng: 39.1728, city: "Jeddah" },
         googleMapsUrl: "https://maps.app.goo.gl/JeddahF1"
     },
@@ -51,7 +51,7 @@ let eventsData = [
         capacity: 2000,
         sold: 1800,
         description: "Discover Maraya, the world's largest mirrored building, nestled in the stunning desert canyon of Ashar Valley.",
-        image: "images/alula.jpg.png",
+        image: "images/alula.jpg",
         mapLocation: { lat: 26.6144, lng: 37.9236, city: "AlUla" },
         googleMapsUrl: "https://maps.app.goo.gl/AlUla"
     },
@@ -68,7 +68,7 @@ let eventsData = [
         capacity: 20000,
         sold: 15000,
         description: "The future capital of thrills, featuring 'Falcon's Flight', the world's tallest, fastest, and longest rollercoaster.",
-        image: "images/qiddiya.jpg.png",
+        image: "images/qiddiya.jpg",
         mapLocation: { lat: 24.7136, lng: 46.6753, city: "Riyadh" },
         googleMapsUrl: "https://maps.app.goo.gl/9Z3R7"
     },
@@ -138,7 +138,7 @@ function displayEvents(events) {
     
     eventsGrid.innerHTML = events.map(event => `
         <div class="event-card" onclick="viewEventDetails(${event.id})">
-            <img src="${event.image}" alt="${event.name}" class="event-image" loading="lazy" onerror="this.onerror=null; this.style.background='linear-gradient(135deg, #7c3aed, #10b981)'; this.style.display='block';">
+            <img src="${event.image}" alt="${event.name}" class="event-image" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #7c3aed, #10b981)'; this.parentElement.style.minHeight='200px';">
             <div class="event-content">
                 <span class="event-category ${event.category}">${event.category.charAt(0).toUpperCase() + event.category.slice(1)}</span>
                 <h3 class="event-title">${event.name}</h3>
